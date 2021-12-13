@@ -87,30 +87,4 @@ let computerSelection = computerPlay();
 // ---------------to make it better-------------------:
 // message "round count" should appear when one of CORRECT shapes is choosen (now appears every time)
 // in other words: cancel should cancel game and reset scores and rounds
-//  Line for "display score" in one place in code
-
-// -----------random functions from internet-------------: 
-//var item = items[Math.random()*items.length>>0]
-// // or:
-//function random_item(items)
-//{
-//  
-//return items[Math.floor(Math.random()*items.length)];
-//     
-//}
-//
-//var items = [254, 45, 212, 365, 2543];
-//console.log(random_item(items));
-//
-//// or:
-//
-//function random_item(items)
-//{
-//  
-//return items[Math.floor(Math.random()*items.length)];
-//     
-//}
-//
-//const items = [254, 45, 212, 365, 2543];
-//console.log(random_item(items));
-
+//  Line for "display score" in one place
