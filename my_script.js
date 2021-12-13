@@ -1,50 +1,21 @@
-
-
-
-
-
-
-
-   
-
-
-
-let playerChoice
+let playerChoice;
 let playerSelection;
 let playerScore = 0;
 let compScore = 0;
-
-//alert("I am here");
+let roundCount = 1;
 
 for (let roundCount = 1; roundCount < 6; roundCount++) {
 
+// final messages:
 
-   //if (roundCount = 5 && (playerScore > compScore)) {
-   //    alert("You've Won!");
-   //    playerChoice = confirm("Play again?");
-   //    if (playerChoice == true) {
-   //        alert("wybrał win ok");
-   //        //roundCount = 1;
-   //    } else {
-   //        alert("See you nex time!")
-   //    }
-   //    
-   //} 
-   //else if (roundCount = 5 && (playerScore > compScore)) {
-   //    (alert("You've lost!")) 
-   //    playerChoice = confirm("Play again?");
-   //    if (playerChoice == true) {
-   //        alert("wybrał lose ok");
-   //        //roundCount = 1;
-   //    } else {
-   //        alert("See you nex time!")
-   //    }
+    if (roundCount == 5) {
 
-   //} else { 
-   //    alert("Lets go!");
-   //}
-
-    
+        if (playerScore > compScore) {
+                alert("You've Won!");
+        } else if (playerScore < compScore) {
+            alert("You've lost!")
+        } else alert("It's total Square!")
+    }
 
 let computerSelection = computerPlay();
 
@@ -67,59 +38,44 @@ let computerSelection = computerPlay();
 
 // -------- play with user :) -------------:
 
-// "if" do wywalki?:
-    //if (roundCount <5) {
-     playerSelection = prompt('rock?', '');
-    //} else {
-    //let compScore = 0;
-   //let playerScore = 0;
-   //roundCount = 0}
+     playerSelection = prompt('What\'s your chosen shape (rock, scissors or paper)?', '');
+
+      //round count display
+     alert("Round = " + (roundCount));
 
     if (playerSelection === '' || playerSelection === null) {
-        alert( 'Canceled'), alert("Your score = " + (playerScore) + " vs machine = " + (compScore)) ;
+        alert( 'Canceled');
     }
 
-    playerSelection = playerSelection.toLowerCase();
-
-
-    //round count display
-
-    alert("Round = " + (roundCount));
+    playerSelection = playerSelection.toLowerCase()
 
     //player win scenarious:
     if (playerSelection == 'paper' && computerSelection == 'rock') {
       alert('You defeated Rock!'), alert("Your score = " + (playerScore + 1) + " vs machine = " + (compScore));
       ++playerScore;
-      //++roundCount;
-    //alert("Round = " + (roundCount));
+      
     } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
         alert('You defeated Paper!'), alert("Your score = " + (playerScore + 1) + " vs machine = " + (compScore));
         ++playerScore;
-        //++roundCount;
-    //alert("Round = " + (roundCount));
+        
     } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
         alert('You defeated Scissors'), alert("Your score = " + (playerScore + 1) + " vs machine = " + (compScore));
         ++playerScore;
-        //++roundCount;
-    //alert("Round = " + (roundCount));
-    // add point to player
+        
+    // above added point to player
 
     } else if (playerSelection == computerSelection) {
         alert(`My shape is ${computerSelection} too! That is sqare! Lets try again!`), alert("Your score = " + (playerScore + 1) + " vs machine = " + (compScore +1));
         ++playerScore;
         ++compScore;
-        //++roundCount;
-        //alert("Round = " + (roundCount));
-    // here add opins to both
+        
+    // above added opins to both
 
     //player defeat scenario:
     } else if (playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors") {
         alert(`You've been defeated by ${computerSelection}! Try again!`), alert("Your score = " + (playerScore) + " vs machine = " + (compScore + 1));
         ++compScore;
-        //++roundCount;
-        //alert("Round = " + (roundCount));
-    // add point to comp
-
+        
     //misspeling:
     } else {
       alert(`Try to put paper, rock or scissors`);
@@ -128,79 +84,33 @@ let computerSelection = computerPlay();
 
 
 
+// ---------------to make it better-------------------:
+// message "round count" should appear when one of CORRECT shapes is choosen (now appears every time)
+// in other words: cancel should cancel game and reset scores and rounds
+//  Line for "display score" in one place in code
 
-// to fix : didplay end of game in case of cancel or end
-            // adding score need to be working
-
-
-
-
-
-
-
-
-//const playerSelection = prompt("HI! What's your shape (rock, scissors or paper)?", ' ');
-//const computerSelection = computerPlay();
+// -----------random functions from internet-------------: 
+//var item = items[Math.random()*items.length>>0]
+// // or:
+//function random_item(items)
+//{
+//  
+//return items[Math.floor(Math.random()*items.length)];
+//     
+//}
 //
-//    function playRound() {
-//        let playerSelection = prompt('HI! What is your shape (rock, scissors or paper)?', ' ');
-//        // your code here!
-//            if (playerSelection === 'rock')
-//            alert( "You won!" );
-//         else alert( "Maybe next time!" )
-//    }
+//var items = [254, 45, 212, 365, 2543];
+//console.log(random_item(items));
 //
-    
-    playRound();
-    
-
-
-
-   // && computerSelection === "Scissors" || "Paper" || "Rock") 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//return return chosen_shape to user:
-
-
-
-
-
-// from internet: 
-var item = items[Math.random()*items.length>>0]
- // or:
-function random_item(items)
-{
-  
-return items[Math.floor(Math.random()*items.length)];
-     
-}
-
-var items = [254, 45, 212, 365, 2543];
-console.log(random_item(items));
-
-// or:
-
-function random_item(items)
-{
-  
-return items[Math.floor(Math.random()*items.length)];
-     
-}
-
-const items = [254, 45, 212, 365, 2543];
-console.log(random_item(items));
+//// or:
+//
+//function random_item(items)
+//{
+//  
+//return items[Math.floor(Math.random()*items.length)];
+//     
+//}
+//
+//const items = [254, 45, 212, 365, 2543];
+//console.log(random_item(items));
 
