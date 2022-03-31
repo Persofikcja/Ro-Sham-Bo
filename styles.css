@@ -1,0 +1,73 @@
+/* styles.css */
+/*
+p {
+  color: red;
+}
+*/
+  
+
+
+#rockBtn {
+  background: red;
+  border: 5;
+  line-height: 1;
+  color: white;
+  text-align: center;
+  outline: 0;
+  padding: 3;
+  cursor: pointer;
+  max-width: 50px;
+}
+
+#rockBtn:focus {
+  border-color: #ffc600;
+}
+
+#rockBtn:hover {
+  background: green;
+}
+
+
+
+#paperBtn {
+  background: orange;
+  border: 5;
+  /* line-height: 1; */
+  color: black;
+  text-align: center;
+  outline: 0;
+  padding: 3;
+  cursor: pointer;
+  /* max-width: 50px; */
+}
+
+#paperBtn:focus {
+  border-color: #ffc600;
+}
+
+#paperBtn:hover {
+  background: green;
+  color: white;
+}
+
+
+
+#scissorsBtn {
+  background: gray;
+  border: 5;
+   /* line-height: 1; */
+  color: white;
+  text-align: center;
+  outline: 0;
+  padding: 3px;
+  cursor: pointer;
+   /* max-width: 50px; */
+}
+
+#scissorsBtn:focus {
+  border-color: #ffc600;
+}
+
+#scissorsBtn:hover {
+  background: green;
+}
